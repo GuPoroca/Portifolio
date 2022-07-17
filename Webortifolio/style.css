@@ -10,6 +10,7 @@
 }
 :root{
     --clr: #03080f;
+    --azul: 70px;
 }
 
 body{
@@ -25,7 +26,7 @@ body{
     font-family:'Cairo';
     font-weight: 600;
     font-size: 1.25em;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
     top:8%;
     margin-left: 4%;
 }
@@ -35,27 +36,26 @@ body{
 
         margin-left:7%;
         font-size: 1em;
+        letter-spacing: 0.05em;
     
 }
 }
 
 p {
+    display: none;
     opacity: 0;
     color: rgb(235, 231, 231);
     font-family:'Cairo';
     font-weight: 600;
     font-size: 1.25em;
     letter-spacing: 0.05em;
-    position: absolute;
-    top: 35%;
-    border: 1px dashed black;
+    position:fixed;
+    top: 30%;
     padding: 1em;
+    padding-right: 0px;
     font-size: calc(0.7vw + 0.6em);
-    direction: ltr;
-    width: 34vw;
-    margin:auto;
-    text-align:justify;
-    max-height: 65vh;
+    width: 38vw;
+    height: 60vh;
     word-break: break-word;
     white-space: pre-line;
     overflow-wrap: break-word;
@@ -65,10 +65,24 @@ p {
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
-    overflow-y: scroll;
+}
+p.active{
+    display: flex;
+    height: 60vh;
+    overflow-y: auto;
 }
 @media screen and (max-width: 600px) {
     p{
+        position: absolute;
+        margin-left: 0px;
+        margin-right: 0px;
+        font-size: large;
+        width: 100vw;
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+    p.active{
+        position: absolute;
         margin-left: 0px;
         margin-right: 0px;
         font-size: large;
@@ -82,7 +96,7 @@ p {
     margin: auto;
     margin-top: 0%;
     margin-bottom: 0%;
-    width:460px;
+    width:500px;
     justify-content: center;
     align-items: center;
     min-height: 100%;
@@ -94,15 +108,15 @@ p {
         margin-left: 0px;
         margin-right: 0px;
     }
+    
 }
-
 
 
 .navigation{
     position:sticky;
     top: 20%;
-    margin-left: 4%;
-    min-width: 380px;
+    margin-left: 4.5%;
+    min-width: 340px;
     width:90%;
     height:69px;
     background: #b3b3b3;
@@ -111,6 +125,9 @@ p {
     align-items: center;
     border-radius: 10px;
 }
+
+
+
 .navigation ul
 {
     display: contents;
@@ -178,6 +195,16 @@ p {
     border: 6px solid var(--clr);
     transition: 0.5s;
 }
+@media screen and (max-width: 600px) {
+    .indicator{
+        width: 60px;
+        height: 60px;
+        --azul:68px;
+    }
+}
+
+
+
 .indicator::before
 {
     content:'';
@@ -204,30 +231,31 @@ p {
 }
 .navigation ul li:nth-child(1).active ~ .indicator
 {
-    transform: translateX(calc(70px * -2));
+    transform: translateX(calc(var(--azul) * -2));
 }
 .navigation ul li:nth-child(2).active ~ .indicator
 {
-    transform: translateX(calc(70px * -1));
+    transform: translateX(calc(var(--azul) * -1));
 } 
 .navigation ul li:nth-child(3).active ~ .indicator
 {
-    transform: translateX(calc(70px * 0));
+    transform: translateX(calc(var(--azul) * 0));
 } 
 .navigation ul li:nth-child(4).active ~ .indicator
 {
-    transform: translateX(calc(70px * 1));
+    transform: translateX(calc(var(--azul) * 1));
 } 
 .navigation ul li:nth-child(5).active ~ .indicator
 {
-    transform: translateX(calc(70px * 2));
+    transform: translateX(calc(var(--azul) * 2));
 } 
 
 .foto{
     margin: auto;
-    width:fit-content;
+    width:64px;
     top: 5%;
-    position: sticky;
+    left:46.5%;
+    position: absolute;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
@@ -239,7 +267,7 @@ p {
         position: absolute;
         justify-content: center;
         align-items: center;
-        left:43%;
+        left:40%;
         
     }
 }
