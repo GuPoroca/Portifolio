@@ -57,6 +57,7 @@ function foo(){
     $('[id=5]').css("display", "flex");
     $('[lang]').hide(); // hide all lang attributes on start.
     $('[lang="en"]').show(); // show just english text
+    $(".projeto").css("display", "flex");
 }
 
 

@@ -257,13 +257,24 @@ p {
     overflow: hidden;
 }
 
+.prj{
+    display: flex;
+    flex-direction: column;
+}
+.tit{
+    text-align: center;
+}
+.desc{
+    text-align: center;
+}
+
 @media screen and (max-width: 600px) {
     .foto{
-        position: absolute;
+        position:absolute;
         justify-content: center;
         align-items: center;
         left:40%;
-        
+        top:2%;
     }
 }
 
