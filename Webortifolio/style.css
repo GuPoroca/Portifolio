@@ -19,7 +19,7 @@ body{
 
 }
 
-.nome{
+.nomeen, .nomept{
     white-space: pre;
     position: sticky;
     color: rgb(235, 231, 231);
@@ -31,18 +31,17 @@ body{
     margin-left: 4%;
 }
 @media screen and (max-width: 600px) {
-    .nome{
-        top: 7%;
-
-        margin-left:7%;
+    .nomeen, .nomept{
+        top: 12%;
+        margin-left:5%;
         font-size: 1em;
         letter-spacing: 0.05em;
-    
+
 }
 }
 
 p {
-    display: none;
+    display: flex;
     opacity: 0;
     color: rgb(235, 231, 231);
     font-family:'Cairo';
@@ -65,10 +64,6 @@ p {
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
-}
-p.active{
-    display: flex;
-    height: 60vh;
     overflow-y: auto;
 }
 @media screen and (max-width: 600px) {

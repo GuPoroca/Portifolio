@@ -1,32 +1,65 @@
 const list = document.querySelectorAll('.list');
-const parag = document.querySelectorAll('.parag');
-var atual = 0;
-var passado = 0;
+var atual = 5;
+var passado = 5;
+var lang = "en";
 var nome = "abt";
 
 
 function activeLink(){
     atual = this.id;
-    if(atual==2){
+    atual = parseInt(atual) + 5;
+    if(atual==7){
         window.open("https://github.com/GuPoroca", "_blank");
-        atual=0;
+        atual=5;
+        return;
+    }
+    if(atual==9){
+        if(lang=="en"){
+            lang="pt";
+            $('[lang]').hide();
+            $('[lang="pt"]').show();
+        }else if(lang=="pt"){
+            lang="en";
+            $('[lang]').hide();
+            $('[lang="en"]').show(); 
+            }
+        if($(window).width() <= 600 && lang == "pt"){
+            $(".nomept").html("Gustavo Poroca      Engenheiro da Computação");
+            }
         return;
     }
     list.forEach((item) =>
     item.classList.remove('active'));
     this.classList.add('active');
-    document.getElementById(passado).style.opacity = 0;
-    document.getElementById(passado).className = nome;
+    $("[id="+passado+"]").css("opacity", "0");
+    $("[id="+passado+"]").css("display", "none");
     passado = atual;
-    document.getElementById(atual).style.opacity = 1
-    nome = document.getElementById(atual).className;
-    document.getElementById(atual).className += " active";
-    
+    $("[id="+atual+"]").css("opacity", "1");
+    $("[id="+atual+"]").css("display", "flex");
+    if(lang=="en"){
+        $('[lang]').hide();
+        $('[lang="en"]').show();
+    }else if(lang=="pt"){
+        $('[lang]').hide();
+        $('[lang="pt"]').show(); 
+        }
+
+    if($(window).width() <= 600 && lang == "pt"){
+        
+        $(".nomept").html("Gustavo Poroca      Engenheiro da Computação");
+    }
 }
 
 function foo(){
-    document.getElementById(0).style.opacity = 1;
+    $("p").css("opacity", "0");
+    $("p").css("display", "none");
+    $('[id=5]').css("opacity", "1");
+    $('[id=5]').css("display", "flex");
+    $('[lang]').hide(); // hide all lang attributes on start.
+    $('[lang="en"]').show(); // show just english text
 }
+
+
 
 list.forEach((item) =>
 item.addEventListener('click',activeLink));
