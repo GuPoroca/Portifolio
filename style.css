@@ -76,15 +76,7 @@ p {
         padding-left: 10vw;
         padding-right: 10vw;
     }
-    p.active{
-        position: absolute;
-        margin-left: 0px;
-        margin-right: 0px;
-        font-size: large;
-        width: 100vw;
-        padding-left: 10vw;
-        padding-right: 10vw;
-    }
+    
 }
 
 .base{
@@ -257,9 +249,15 @@ p {
     overflow: hidden;
 }
 
+.curri{
+    display: flex;
+    overflow-y: auto;
+}
+
 .prj{
     display: flex;
     flex-direction: column;
+    
 }
 .tit{
     text-align: center;

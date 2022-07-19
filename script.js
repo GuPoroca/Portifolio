@@ -26,8 +26,10 @@ function activeLink(){
         if($(window).width() <= 600 && lang == "pt"){
             $(".nomept").html("Gustavo Poroca      Engenheiro da Computação");
             }
-        if(passado==5){
-            $('[id=8]').css("display", "none");
+        for (let i=5 ;i<=9; i++){
+            if(i!=passado){
+                $('[id='+i+']').css("display", "none");
+            }
         }
         return;
     }
@@ -59,6 +61,7 @@ function foo(){
     $('[lang]').hide(); // hide all lang attributes on start.
     $('[lang="en"]').show(); // show just english text
     $('[id=8]').css("display", "none");
+    $('[id=6]').css("display", "none");
 }
 
 
